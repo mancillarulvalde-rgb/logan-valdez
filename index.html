@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Logan Valdez | Diseñador Web · Matrix Azul Visible</title>
+    <title>Logan Valdez | Diseñador Web · RGB Matrix + Ejemplos Visuales</title>
+    <meta name="description" content="Diseño web profesional con estilo RGB: landing pages, ecommerce, dashboards, SEO y más. Ejemplos visuales incluidos.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,14 +17,13 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000000; /* Fondo negro total */
+            background-color: #000000;
             color: #eef2ff;
             scroll-behavior: smooth;
             line-height: 1.5;
             overflow-x: hidden;
         }
 
-        /* CANVAS MATRIX: fondo negro total, letras azules brillantes */
         #matrix-canvas {
             position: fixed;
             top: 0;
@@ -32,9 +32,9 @@
             height: 100%;
             z-index: 0;
             display: block;
-            opacity: 1; /* máxima visibilidad */
+            opacity: 1;
             pointer-events: none;
-            background-color: #000000; /* fondo sólido negro */
+            background-color: #000000;
         }
 
         .container {
@@ -45,17 +45,20 @@
             z-index: 2;
         }
 
-        /* Tarjetas con fondo negro semitransparente pero sólido para leer bien */
-        header, .card, .price-table, .proyecto-destacado, .contacto-directo, footer {
+        header, .card, .price-table, .proyecto-destacado, .contacto-directo, footer, 
+        .tech-section, .benefits-section, .testimonios-section {
             background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: none; /* quitamos blur para que no opaque el matrix */
             border-radius: 28px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         header {
             padding: 15px 25px;
             margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .hero {
@@ -65,17 +68,23 @@
 
         .hero-stats {
             background: rgba(0, 0, 0, 0.8);
+            border-radius: 40px;
+            border: 1px solid rgba(255, 85, 85, 0.5);
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            margin-top: 40px;
         }
 
         .logo {
             font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(135deg, #ffffff, #3b82f6);
+            background: linear-gradient(135deg, #ff3333, #33ff33, #3333ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-        .logo span { color: #3b82f6; background: none; }
 
         nav a {
             color: #cbd5e6;
@@ -84,7 +93,7 @@
             font-weight: 500;
             transition: 0.3s;
         }
-        nav a:hover { color: #3b82f6; }
+        nav a:hover { color: #ff5555; }
 
         .hero-content h1 {
             font-size: 54px;
@@ -92,73 +101,147 @@
             line-height: 1.2;
             margin-bottom: 20px;
         }
-        .hero-content h1 .highlight { color: #3b82f6; border-bottom: 3px solid #3b82f6; }
-        .hero-content p { font-size: 18px; color: #e2e8f0; margin-bottom: 35px; max-width: 550px; text-shadow: 0 0 2px black; }
+        .hero-content h1 .highlight { 
+            background: linear-gradient(135deg, #ff5555, #55ff55, #5555ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            border-bottom: 3px solid #ff5555;
+        }
+        .hero-content p { font-size: 18px; color: #e2e8f0; margin-bottom: 35px; max-width: 550px; }
 
         .btn-primary {
-            background: #3b82f6;
-            box-shadow: 0 0 10px #3b82f6;
+            background: linear-gradient(90deg, #ff4444, #44ff44, #4444ff);
+            box-shadow: 0 0 10px #ff4444;
             display: inline-block;
             padding: 12px 28px;
             border-radius: 40px;
             color: white;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.2s;
         }
-        .btn-primary:hover { background: #2563eb; transform: translateY(-2px); }
+        .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); }
         .btn-outline {
-            border: 1px solid #3b82f6;
+            border: 1px solid #ff5555;
             display: inline-block;
             padding: 12px 28px;
             border-radius: 40px;
             color: #e2e8f0;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.2s;
         }
-        .btn-outline:hover { background: rgba(59,130,246,0.2); }
+        .btn-outline:hover { background: rgba(255,85,85,0.2); }
 
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 25px;
-            padding: 30px;
-            border-radius: 40px;
-            border: 1px solid rgba(59,130,246,0.5);
+        .stat-number { 
+            font-size: 42px; 
+            font-weight: 800; 
+            text-shadow: 0 0 6px #ff5555;
+            background: linear-gradient(135deg, #ff5555, #55ff55);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        .stat-number { color: #3b82f6; font-size: 42px; font-weight: 800; text-shadow: 0 0 6px #3b82f6; }
 
         .section-title {
             text-align: center;
             font-size: 36px;
             font-weight: 700;
             margin: 60px 0 20px;
+            background: linear-gradient(135deg, #ff8888, #88ff88, #8888ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .section-sub { text-align: center; color: #cbd5e6; margin-bottom: 50px; }
 
         .grid-matrix {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 35px;
             margin: 40px 0;
         }
         .card {
-            border: 1px solid rgba(59,130,246,0.4);
+            border: 1px solid rgba(255,85,85,0.4);
             border-radius: 28px;
             padding: 32px 24px;
             transition: 0.3s;
         }
         .card:hover {
             transform: translateY(-10px);
-            border-color: #3b82f6;
-            box-shadow: 0 25px 35px -12px rgba(59,130,246,0.4);
+            border-color: #ff5555;
+            box-shadow: 0 25px 35px -12px rgba(255,85,85,0.5);
         }
-        .card-icon { font-size: 48px; color: #3b82f6; margin-bottom: 20px; }
+        .card-icon { font-size: 48px; background: linear-gradient(135deg, #ff5555, #55ff55, #5555ff); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; }
+        
+        /* Miniatura de ejemplo dentro de cada tarjeta */
+        .ejemplo-mini {
+            margin-top: 20px;
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 12px;
+            border-left: 4px solid #ff5555;
+            transition: 0.2s;
+        }
+        .ejemplo-mini:hover {
+            background: #252540;
+        }
+        .ejemplo-mini .preview-icon {
+            font-size: 28px;
+            color: #55ff55;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .ejemplo-mini span {
+            font-size: 13px;
+            color: #ccccdd;
+        }
+        .mockup-browser {
+            background: #0f0f1a;
+            border-radius: 12px;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px;
+            font-size: 11px;
+            font-family: monospace;
+            color: #88ff88;
+        }
+
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+        }
+        .tech-icons i {
+            font-size: 48px;
+            color: #ff5555;
+            transition: 0.2s;
+        }
+        .tech-icons i:hover { transform: scale(1.1); text-shadow: 0 0 10px #ff5555; }
+
+        .benefits-grid, .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+        .benefit-item, .testimonio-item {
+            text-align: center;
+            background: rgba(255,85,85,0.1);
+            border-radius: 24px;
+            padding: 20px;
+        }
+        .testimonio-item i { color: #ffcc33; margin-bottom: 10px; }
 
         .price-table {
-            border: 1px solid #3b82f6;
-            border-radius: 32px;
             padding: 30px;
-            margin: 40px 0;
+            border: 1px solid #ff5555;
         }
         .your-price { color: #4ade80; font-weight: 800; }
 
@@ -167,10 +250,8 @@
             flex-wrap: wrap;
             gap: 30px;
             align-items: center;
-            border-radius: 32px;
             padding: 30px;
-            margin: 40px 0;
-            border: 1px solid #3b82f6;
+            border: 1px solid #ff5555;
         }
         .proyecto-info { flex: 2; }
         .proyecto-mock {
@@ -182,11 +263,9 @@
         }
 
         .contacto-directo {
-            border-radius: 48px;
-            margin: 60px 0;
             text-align: center;
             padding: 40px;
-            border: 1px solid #3b82f6;
+            border: 1px solid #ff5555;
         }
         .contacto-info {
             display: flex;
@@ -196,20 +275,37 @@
             margin: 30px 0;
         }
         .contacto-item {
-            background: rgba(59,130,246,0.2);
+            background: rgba(255,85,85,0.2);
             padding: 12px 24px;
             border-radius: 60px;
         }
         .contacto-item a { color: white; text-decoration: none; }
 
+        form {
+            max-width: 500px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        form input, form textarea {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid #ff5555;
+            border-radius: 40px;
+            padding: 12px 20px;
+            color: white;
+            font-family: inherit;
+        }
+        form textarea { border-radius: 20px; resize: vertical; }
+        form button { background: linear-gradient(90deg, #ff4444, #44ff44, #4444ff); border: none; cursor: pointer; }
+
         footer {
-            border-top: 1px solid #3b82f6;
             text-align: center;
             padding: 30px;
+            border-top: 1px solid #ff5555;
             margin-top: 30px;
         }
 
-        /* Modo experto flotante */
         #expert-toggle {
             position: fixed;
             bottom: 20px;
@@ -222,7 +318,7 @@
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            border: 1px solid #3b82f6;
+            border: 1px solid #ff5555;
         }
         #expert-panel {
             display: none;
@@ -234,14 +330,15 @@
             border-radius: 20px;
             padding: 15px;
             z-index: 9998;
-            border: 1px solid #3b82f6;
+            border: 1px solid #ff5555;
             font-size: 13px;
         }
 
         @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; }
             .hero-content h1 { font-size: 38px; }
-            header { flex-direction: column; gap: 15px; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav a { margin: 0 15px; }
+            .hero-stats { grid-template-columns: repeat(2,1fr); }
         }
 
         .fade-up {
@@ -261,7 +358,7 @@
 
     <div class="container">
         <header>
-            <div class="logo">LOGAN<span>VALDEZ</span></div>
+            <div class="logo">LOGAN<span style="background: none; color: #fff;">VALDEZ</span></div>
             <nav>
                 <a href="#">Inicio</a>
                 <a href="#servicios">Servicios</a>
@@ -273,7 +370,7 @@
 
         <section class="hero">
             <div class="hero-content">
-                <div class="badge" style="background:rgba(59,130,246,0.2); display:inline-block; padding:6px 14px; border-radius:40px;">✦ Diseñador web ejecutivo</div>
+                <div class="badge" style="background:rgba(255,85,85,0.2); display:inline-block; padding:6px 14px; border-radius:40px;">✦ Diseñador web ejecutivo</div>
                 <h1>Presencia digital <span class="highlight">que convierte</span> clientes</h1>
                 <p>Soy Logan Valdez. Creo páginas web profesionales que venden y generan confianza. Calidad de primer mundo, precios desde $1,400 MXN.</p>
                 <div class="btn-group">
@@ -290,15 +387,112 @@
         </section>
 
         <div id="servicios"></div>
-        <h2 class="section-title fade-up">Soluciones en <span style="color:#3b82f6">Matriz Digital</span></h2>
+        <h2 class="section-title fade-up">Soluciones en <span style="background: linear-gradient(135deg, #ff8888, #88ff88, #8888ff); -webkit-background-clip: text; background-clip: text; color: transparent;">Matriz RGB</span></h2>
         <p class="section-sub fade-up">Diseño ejecutivo, adaptado a tus necesidades</p>
         <div class="grid-matrix">
-            <div class="card fade-up"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Landing pages</h3><p>Alta conversión, diseño enfocado en ventas.</p></div>
-            <div class="card fade-up"><div class="card-icon"><i class="fas fa-building"></i></div><h3>Webs corporativas</h3><p>Imagen ejecutiva que inspira confianza.</p></div>
-            <div class="card fade-up"><div class="card-icon"><i class="fas fa-store"></i></div><h3>Ecommerce</h3><p>Tiendas online completas.</p></div>
-            <div class="card fade-up"><div class="card-icon"><i class="fas fa-chart-line"></i></div><h3>Dashboards</h3><p>Paneles administrativos y métricas.</p></div>
-            <div class="card fade-up"><div class="card-icon"><i class="fas fa-search"></i></div><h3>SEO técnico</h3><p>Optimización para Google.</p></div>
-            <div class="card fade-up"><div class="card-icon"><i class="fas fa-palette"></i></div><h3>UI/UX Strategy</h3><p>Diseño centrado en el usuario.</p></div>
+            <!-- Landing pages -->
+            <div class="card fade-up">
+                <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Landing pages</h3>
+                <p>Alta conversión, diseño enfocado en ventas.</p>
+                <div class="ejemplo-mini">
+                    <i class="fas fa-chart-line preview-icon"></i> <span>Ejemplo: Página de lanzamiento de producto</span>
+                    <div class="mockup-browser">
+                        <i class="fas fa-check-circle" style="color:#55ff55;"></i> Formulario de captura · Botón CTA · Animación
+                    </div>
+                </div>
+            </div>
+            <!-- Webs corporativas -->
+            <div class="card fade-up">
+                <div class="card-icon"><i class="fas fa-building"></i></div>
+                <h3>Webs corporativas</h3>
+                <p>Imagen ejecutiva que inspira confianza.</p>
+                <div class="ejemplo-mini">
+                    <i class="fas fa-building preview-icon"></i> <span>Ejemplo: Sitio institucional con 5 secciones</span>
+                    <div class="mockup-browser">
+                        <i class="fas fa-home"></i> Inicio · Servicios · Blog · Contacto · Mapa
+                    </div>
+                </div>
+            </div>
+            <!-- Ecommerce -->
+            <div class="card fade-up">
+                <div class="card-icon"><i class="fas fa-store"></i></div>
+                <h3>Ecommerce</h3>
+                <p>Tiendas online completas.</p>
+                <div class="ejemplo-mini">
+                    <i class="fas fa-shopping-cart preview-icon"></i> <span>Ejemplo: Tienda de ropa con carrito</span>
+                    <div class="mockup-browser">
+                        <i class="fas fa-credit-card"></i> Pasarela de pago · Inventario · Envíos
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboards -->
+            <div class="card fade-up">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Dashboards</h3>
+                <p>Paneles administrativos y métricas.</p>
+                <div class="ejemplo-mini">
+                    <i class="fas fa-chart-pie preview-icon"></i> <span>Ejemplo: Panel de ventas en tiempo real</span>
+                    <div class="mockup-browser">
+                        <i class="fas fa-chart-simple"></i> Gráficos · KPIs · Exportación a Excel
+                    </div>
+                </div>
+            </div>
+            <!-- SEO técnico -->
+            <div class="card fade-up">
+                <div class="card-icon"><i class="fas fa-search"></i></div>
+                <h3>SEO técnico</h3>
+                <p>Optimización para Google.</p>
+                <div class="ejemplo-mini">
+                    <i class="fas fa-google preview-icon"></i> <span>Ejemplo: Mi sitio alcanzó 95/100 en PageSpeed</span>
+                    <div class="mockup-browser">
+                        <i class="fas fa-tachometer-alt"></i> Meta tags · Estructura · Velocidad · Mobile first
+                    </div>
+                </div>
+            </div>
+            <!-- UI/UX Strategy -->
+            <div class="card fade-up">
+                <div class="card-icon"><i class="fas fa-palette"></i></div>
+                <h3>UI/UX Strategy</h3>
+                <p>Diseño centrado en el usuario.</p>
+                <div class="ejemplo-mini">
+                    <i class="fas fa-users preview-icon"></i> <span>Ejemplo: Rediseño que aumentó retención 40%</span>
+                    <div class="mockup-browser">
+                        <i class="fas fa-draw-polygon"></i> Wireframes · Prototipos · Pruebas A/B
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tecnologías -->
+        <div class="tech-section fade-up">
+            <h3 style="text-align:center; padding-top:30px;">⚙️ Tecnologías que domino</h3>
+            <div class="tech-icons">
+                <i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> <i class="fab fa-js"></i>
+                <i class="fab fa-react"></i> <i class="fab fa-wordpress"></i> <i class="fab fa-shopify"></i>
+                <i class="fas fa-database"></i> <i class="fab fa-figma"></i>
+            </div>
+        </div>
+
+        <!-- Beneficios -->
+        <div class="benefits-section fade-up">
+            <h3 style="text-align:center; padding-top:30px;">💎 ¿Por qué trabajar conmigo?</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item"><i class="fas fa-bolt" style="color:#ff5555; font-size:28px;"></i><h4>Respuesta rápida</h4><p>Contestó en menos de 2 horas.</p></div>
+                <div class="benefit-item"><i class="fas fa-headset" style="color:#55ff55; font-size:28px;"></i><h4>Soporte post-venta</h4><p>30 días de ajustes gratis.</p></div>
+                <div class="benefit-item"><i class="fas fa-chart-line" style="color:#5555ff; font-size:28px;"></i><h4>SEO incluido</h4><p>Tu sitio optimizado para Google.</p></div>
+                <div class="benefit-item"><i class="fas fa-pencil-ruler" style="color:#ffaa33; font-size:28px;"></i><h4>Diseño único</h4><p>Sin plantillas genéricas.</p></div>
+            </div>
+        </div>
+
+        <!-- Testimonios -->
+        <div class="testimonios-section fade-up">
+            <h3 style="text-align:center; padding-top:30px;">🗣️ Lo que dicen mis clientes</h3>
+            <div class="testimonios-grid">
+                <div class="testimonio-item"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Logan entendió perfectamente lo que necesitaba. Mi página web ya está generando consultas."</p><strong>- Ana G.</strong></div>
+                <div class="testimonio-item"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Precio justo y trabajo de calidad. Volveré a contratarlo para mi ecommerce."</p><strong>- Carlos M.</strong></div>
+                <div class="testimonio-item"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"El dashboard que me hizo es increíble, súper útil para mi negocio."</p><strong>- Laura P.</strong></div>
+            </div>
         </div>
 
         <div id="precios"></div>
@@ -317,28 +511,22 @@
         </div>
 
         <div id="proyecto"></div>
-        <h2 class="section-title fade-up">Mi primer <span style="color:#3b82f6">proyecto real</span></h2>
+        <h2 class="section-title fade-up">Mi primer <span style="color:#ff5555;">proyecto real</span></h2>
         <p class="section-sub fade-up">Papelería Lunetamill · Cliente satisfecho</p>
         <div class="proyecto-destacado fade-up">
             <div class="proyecto-info">
                 <h3><i class="fas fa-store"></i> Papelería Lunetamill</h3>
                 <p><strong>✅ Entregado y funcionando · 100% real</strong></p>
                 <p>Sitio web completo para papelería con servicios de copiado, impresión, enmicado, engargolado, trámites, escáner a PDF, además de venta de mercería, juguetes y cosméticos. Diseño moderno estilo "Barbie ejecutivo", totalmente responsivo, con formulario de contacto y botón de WhatsApp.</p>
-                <ul style="margin-top:12px; list-style:none;">
-                    <li><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Página responsive</li>
-                    <li><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Formulario de contacto funcional</li>
-                    <li><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Botón de WhatsApp directo</li>
-                    <li><i class="fas fa-check-circle" style="color:#3b82f6;"></i> Fondo animado con partículas</li>
-                </ul>
-                <div><span style="background:#3b82f6; padding:4px 12px; border-radius:20px; color:white;">🟢 Cliente feliz</span></div>
+                <a href="https://mancillarulvalde-rgb.github.io/lunetamill/" target="_blank" class="btn-primary" style="margin-top:15px; display:inline-block;">🔗 Ver sitio en vivo</a>
             </div>
             <div class="proyecto-mock">
                 <i class="fas fa-crown" style="font-size:48px; color:#ff66b5;"></i>
                 <p style="margin-top:10px;">📸 Vista previa del proyecto</p>
                 <div style="background:#2d2d3a; border-radius:16px; padding:10px; margin-top:10px;">
-                    <i class="fas fa-image"></i> <em>Inserta aquí tu captura de lunetamill.html</em>
+                    <i class="fas fa-image"></i> <em>Captura de pantalla de lunetamill.html</em>
                 </div>
-                <p><small>*Toma una captura de pantalla y reemplaza este bloque*</small></p>
+                <p><small>*Puedes tomar una captura y subirla a tu repositorio para mostrarla*</small></p>
             </div>
         </div>
 
@@ -353,63 +541,71 @@
             <div class="tiempo-entrega" style="background:#1e293b; display:inline-block; padding:8px 24px; border-radius:40px;">
                 <i class="fas fa-clock"></i> Entrega: 5 a 12 días hábiles
             </div>
-            <p style="margin-top:30px;">🟢 Presupuesto sin compromiso. Precios desde <strong>$1,400 MXN</strong>.</p>
-            <a href="mailto:mancillarulvalde@gmail.com" class="btn-primary" style="margin-top:25px;">Solicitar cotización</a>
+
+            <form action="https://formspree.io/f/xknakgpj" method="POST" style="margin-top:30px;">
+                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="message" rows="3" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                <button type="submit" class="btn-primary">Enviar mensaje <i class="fas fa-paper-plane"></i></button>
+            </form>
         </div>
 
         <footer>
-            <p>© 2025 Logan Valdez — Diseñador web ejecutivo | Matrix Azul Visible</p>
-            <div style="margin-top:15px;"><i class="fab fa-instagram"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-behance"></i></div>
+            <p>© 2025 Logan Valdez — Diseñador web ejecutivo | Soluciones digitales RGB</p>
+            <div style="margin-top:15px;">
+                <a href="#" style="color:#ff5555; margin:0 10px;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color:#55ff55; margin:0 10px;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color:#5555ff; margin:0 10px;"><i class="fab fa-behance"></i></a>
+            </div>
         </footer>
     </div>
 
     <!-- Modo experto flotante -->
     <div id="expert-toggle">
-        <i class="fas fa-microchip" style="color:#3b82f6;"></i>
+        <i class="fas fa-microchip" style="color:#ff5555;"></i>
         <span style="color:white; font-weight:600;">Modo Experto</span>
         <div style="width:40px; height:20px; background:#334155; border-radius:30px; position:relative;">
             <div id="expert-switch" style="width:18px; height:18px; background:#94a3b8; border-radius:50%; position:absolute; top:1px; left:2px; transition:0.2s;"></div>
         </div>
     </div>
     <div id="expert-panel">
-        <h4 style="color:#3b82f6;"><i class="fas fa-chart-line"></i> Panel Experto</h4>
+        <h4 style="color:#ff5555;"><i class="fas fa-chart-line"></i> Panel Experto</h4>
         <div><strong>⏱️ Carga:</strong> <span id="load-time">--</span> ms</div>
         <div><strong>📡 Peticiones:</strong> <span id="requests">--</span></div>
-        <div><strong>🎨 Grid:</strong> <span id="grid-status">off</span> <button id="toggle-grid" style="background:#3b82f6; border:none; border-radius:20px; padding:2px 8px; color:white;">Mostrar</button></div>
+        <div><strong>🎨 Grid:</strong> <span id="grid-status">off</span> <button id="toggle-grid" style="background:#ff5555; border:none; border-radius:20px; padding:2px 8px; color:white;">Mostrar</button></div>
         <div><strong>📱 Ancho:</strong> <span id="view-width"></span>px</div>
         <div><strong>🔍 SEO:</strong> Meta descripción 150-160 caracteres</div>
     </div>
 
     <script>
-        // ==================== MATRIZ AZUL SOBRE FONDO NEGRO, LENTO Y MUY VISIBLE ====================
+        // ==================== MATRIZ RGB (colores dinámicos rojo, verde, azul) ====================
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
         let drops = [];
         let columns = [];
         
-        // Códigos de programación reales y variados
         const codeSnippets = [
-            "function App() { return <div>Matrix</div>; }",
+            "function App() { return <div>RGB Matrix</div>; }",
             "const [data, setData] = useState([]);",
             "npm install styled-components",
-            "background-color: #0a0c10; color: #3b82f6;",
-            "<div className='matrix-bg'>",
+            "background: linear-gradient(90deg, red, green, blue);",
+            "<div className='rgb-bg'>",
             "margin: 0; padding: 0; box-sizing: border-box;",
-            "git commit -m 'feat: matrix effect'",
-            "console.log('Código cayendo...');",
+            "git commit -m 'feat: rgb effect'",
+            "console.log('RGB colors falling...');",
             "for(let i=0; i<rows; i++) { sum += array[i]; }",
             "display: grid; gap: 20px;",
             "@media (prefers-color-scheme: dark) { }",
-            "fetch('/api/matrix').then(res => res.json());",
-            "class MatrixEffect extends React.Component { }",
-            "export default function Home() { return <h1>Logan Dev</h1>; }",
+            "fetch('/api/rgb').then(res => res.json());",
+            "class RGBEffect extends React.Component { }",
+            "export default function Home() { return <h1>Logan RGB Dev</h1>; }",
             "font-family: 'Fira Code', monospace;",
-            "useEffect(() => { initMatrix(); }, []);",
-            "<button className='btn-matrix'>Click</button>",
+            "useEffect(() => { initRGB(); }, []);",
+            "<button className='btn-rgb'>Click</button>",
             "border-radius: 28px; backdrop-filter: blur(0px);",
             "const logo = document.querySelector('.logo');",
-            "app.get('/matrix', (req, res) => { res.send('code'); });"
+            "app.get('/rgb', (req, res) => { res.send('color'); });"
         ];
         
         function initMatrix() {
@@ -417,7 +613,6 @@
             height = window.innerHeight;
             canvas.width = width;
             canvas.height = height;
-            
             const fontSize = 16;
             columns = Math.floor(width / fontSize);
             drops = [];
@@ -426,28 +621,31 @@
             }
         }
         
+        let rgbTime = 0;
+        
         function drawMatrix() {
             if (!ctx) return;
-            // Limpiar completamente con negro opaco para que las letras resalten
             ctx.fillStyle = "#000000";
             ctx.fillRect(0, 0, width, height);
             
-            ctx.fillStyle = "#3b82f6";
+            rgbTime += 0.02;
+            const r = Math.floor(128 + 127 * Math.sin(rgbTime));
+            const g = Math.floor(128 + 127 * Math.sin(rgbTime + 2.0));
+            const b = Math.floor(128 + 127 * Math.sin(rgbTime + 4.0));
+            ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
             ctx.shadowBlur = 5;
-            ctx.shadowColor = "#3b82f6";
+            ctx.shadowColor = `rgb(${r}, ${g}, ${b})`;
             ctx.font = "bold 14px 'Fira Code', 'Courier New', monospace";
             
             for (let i = 0; i < drops.length; i++) {
                 const snippetIndex = (Math.floor(Date.now() / 2500) + i) % codeSnippets.length;
                 let text = codeSnippets[snippetIndex];
                 if (text.length > 24) text = text.substring(0, 22) + "..";
-                
                 const x = i * 16;
                 const y = drops[i] * 16;
                 if (y < height && y > 0) {
                     ctx.fillText(text, x, y);
                 }
-                // Velocidad lenta: 0.2 por frame
                 if (y > height && Math.random() > 0.998) {
                     drops[i] = 0;
                 }
@@ -456,9 +654,7 @@
             requestAnimationFrame(drawMatrix);
         }
         
-        window.addEventListener('resize', () => {
-            initMatrix();
-        });
+        window.addEventListener('resize', () => { initMatrix(); });
         initMatrix();
         drawMatrix();
         
@@ -474,7 +670,7 @@
         }, { threshold: 0.1 });
         faders.forEach(el => observer.observe(el));
         
-        // Animación de números estadísticas
+        // Animación de números
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.hero-stats .stat-number').forEach(el => {
                 let raw = el.innerText;
@@ -499,14 +695,13 @@
             window.addEventListener('resize', () => {
                 document.getElementById('view-width').innerText = window.innerWidth;
             });
-            // Medir rendimiento
             const perfData = performance.timing;
             const loadTime = perfData.loadEventEnd - perfData.navigationStart;
             document.getElementById('load-time').innerText = loadTime;
             document.getElementById('requests').innerText = performance.getEntriesByType('resource').length;
         });
         
-        // ==================== MODO EXPERTO ====================
+        // Modo experto
         const toggleBtn = document.getElementById('expert-switch');
         const expertPanel = document.getElementById('expert-panel');
         let expertActive = false;
@@ -514,7 +709,7 @@
             expertActive = !expertActive;
             if(expertActive) {
                 toggleBtn.style.left = '20px';
-                toggleBtn.style.background = '#3b82f6';
+                toggleBtn.style.background = '#ff5555';
                 expertPanel.style.display = 'block';
             } else {
                 toggleBtn.style.left = '2px';
@@ -538,7 +733,7 @@
                 overlay.style.height = '100%';
                 overlay.style.pointerEvents = 'none';
                 overlay.style.zIndex = '99999';
-                overlay.style.backgroundImage = 'repeating-linear-gradient(transparent, transparent 39px, #3b82f6 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, #3b82f6 40px)';
+                overlay.style.backgroundImage = 'repeating-linear-gradient(transparent, transparent 39px, #ff5555 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, #55ff55 40px)';
                 overlay.style.opacity = '0.25';
                 document.body.appendChild(overlay);
                 window.gridOverlay = overlay;
