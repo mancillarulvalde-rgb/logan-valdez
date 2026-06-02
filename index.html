@@ -175,7 +175,6 @@
         }
         .card-icon { font-size: 48px; background: linear-gradient(135deg, #ff5555, #55ff55, #5555ff); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; }
         
-        /* Miniatura de ejemplo dentro de cada tarjeta */
         .ejemplo-mini {
             margin-top: 20px;
             background: #1a1a2e;
@@ -390,7 +389,6 @@
         <h2 class="section-title fade-up">Soluciones en <span style="background: linear-gradient(135deg, #ff8888, #88ff88, #8888ff); -webkit-background-clip: text; background-clip: text; color: transparent;">Matriz RGB</span></h2>
         <p class="section-sub fade-up">Diseño ejecutivo, adaptado a tus necesidades</p>
         <div class="grid-matrix">
-            <!-- Landing pages -->
             <div class="card fade-up">
                 <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
                 <h3>Landing pages</h3>
@@ -402,7 +400,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Webs corporativas -->
             <div class="card fade-up">
                 <div class="card-icon"><i class="fas fa-building"></i></div>
                 <h3>Webs corporativas</h3>
@@ -414,7 +411,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Ecommerce -->
             <div class="card fade-up">
                 <div class="card-icon"><i class="fas fa-store"></i></div>
                 <h3>Ecommerce</h3>
@@ -426,7 +422,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Dashboards -->
             <div class="card fade-up">
                 <div class="card-icon"><i class="fas fa-chart-line"></i></div>
                 <h3>Dashboards</h3>
@@ -438,7 +433,6 @@
                     </div>
                 </div>
             </div>
-            <!-- SEO técnico -->
             <div class="card fade-up">
                 <div class="card-icon"><i class="fas fa-search"></i></div>
                 <h3>SEO técnico</h3>
@@ -450,7 +444,6 @@
                     </div>
                 </div>
             </div>
-            <!-- UI/UX Strategy -->
             <div class="card fade-up">
                 <div class="card-icon"><i class="fas fa-palette"></i></div>
                 <h3>UI/UX Strategy</h3>
@@ -464,7 +457,6 @@
             </div>
         </div>
 
-        <!-- Tecnologías -->
         <div class="tech-section fade-up">
             <h3 style="text-align:center; padding-top:30px;">⚙️ Tecnologías que domino</h3>
             <div class="tech-icons">
@@ -474,7 +466,6 @@
             </div>
         </div>
 
-        <!-- Beneficios -->
         <div class="benefits-section fade-up">
             <h3 style="text-align:center; padding-top:30px;">💎 ¿Por qué trabajar conmigo?</h3>
             <div class="benefits-grid">
@@ -485,7 +476,6 @@
             </div>
         </div>
 
-        <!-- Testimonios -->
         <div class="testimonios-section fade-up">
             <h3 style="text-align:center; padding-top:30px;">🗣️ Lo que dicen mis clientes</h3>
             <div class="testimonios-grid">
@@ -542,7 +532,10 @@
                 <i class="fas fa-clock"></i> Entrega: 5 a 12 días hábiles
             </div>
 
-            <form action="https://formspree.io/f/xknakgpj" method="POST" style="margin-top:30px;">
+            <!-- Formulario corregido con FormSubmit (funcional, sin errores) -->
+            <form action="https://formsubmit.co/mancillarulvalde@gmail.com" method="POST" style="margin-top:30px;">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://mancillarulvalde-rgb.github.io/logan-valdez/">
                 <input type="text" name="name" placeholder="Tu nombre" required>
                 <input type="email" name="email" placeholder="Tu correo electrónico" required>
                 <textarea name="message" rows="3" placeholder="Cuéntame sobre tu proyecto..."></textarea>
@@ -560,7 +553,6 @@
         </footer>
     </div>
 
-    <!-- Modo experto flotante -->
     <div id="expert-toggle">
         <i class="fas fa-microchip" style="color:#ff5555;"></i>
         <span style="color:white; font-weight:600;">Modo Experto</span>
@@ -578,7 +570,6 @@
     </div>
 
     <script>
-        // ==================== MATRIZ RGB (colores dinámicos rojo, verde, azul) ====================
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
@@ -658,7 +649,6 @@
         initMatrix();
         drawMatrix();
         
-        // ==================== ANIMACIONES SCROLL ====================
         const faders = document.querySelectorAll('.fade-up');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -670,7 +660,6 @@
         }, { threshold: 0.1 });
         faders.forEach(el => observer.observe(el));
         
-        // Animación de números
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.hero-stats .stat-number').forEach(el => {
                 let raw = el.innerText;
@@ -701,7 +690,6 @@
             document.getElementById('requests').innerText = performance.getEntriesByType('resource').length;
         });
         
-        // Modo experto
         const toggleBtn = document.getElementById('expert-switch');
         const expertPanel = document.getElementById('expert-panel');
         let expertActive = false;
